@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sreeram91/Docker-Volume -f Dockerfile.dev .
+
+script:
+  - docker run sreeram91/Docker-Volume npm run test -- --coverage
+
